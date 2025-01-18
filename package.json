@@ -5,7 +5,7 @@
   "private": true,
   "engines": {
     "node": ">=20",
-    "pnpm": ">=9.15"
+    "pnpm": ">=9.15.3"
   },
   "scripts": {
     "build": "gatsby build",
@@ -97,5 +97,5 @@
     "url": "https://github.com/wikimediairan/website/issues"
   },
   "homepage": "https://github.com/wikimediairan/website#readme",
-  "packageManager": "pnpm@9.15.13"
+  "packageManager": "pnpm@9.15.3"
 }
