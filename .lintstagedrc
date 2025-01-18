@@ -1,0 +1,4 @@
+{
+  "**/*.(js|ts)?(x)": "pnpm run lint:fix",
+  "**/*": "pnpm run format"
+}
