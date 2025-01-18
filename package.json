@@ -1,6 +1,6 @@
 {
   "name": "wikimedia-iran-ug-website",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "The Gatsby.js website to host Wikimedia Iran User Group online presence.",
   "private": true,
   "engines": {
