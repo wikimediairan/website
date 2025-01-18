@@ -4,7 +4,7 @@ import type Post from "~/src/types/Post"
 
 interface UseInfiniteScrollProperties {
   posts: Post[]
-  scrollEdgeRef: React.RefObject<HTMLDivElement>
+  scrollEdgeRef: React.RefObject<HTMLDivElement | null>
   maxPostNum: number
   offsetY: number
 }
@@ -20,7 +20,7 @@ const useInfiniteScroll = ({
   const [isLoading, setIsLoading] = useState(false)
   const [observerLoading, setObserverLoading] = useState(false)
 
-  const observer = useRef<IntersectionObserver>()
+  const observer = useRef<IntersectionObserver>(null)
 
   useLayoutEffect(() => {
     if (posts.length === 0 || isLoading) return
@@ -29,6 +29,7 @@ const useInfiniteScroll = ({
     setIsLoading(true)
   }, [isLoading, posts, maxPostNumber])
 
+  // @ts-expect-error fix type error
   useEffect(() => {
     const loadEdges = () => {
       const currentLength = currentList.length

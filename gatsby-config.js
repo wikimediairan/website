@@ -20,8 +20,34 @@ const siteMetadata = {
       name: "About",
     },
     {
+      link: "/activities/",
+      name: "Activities",
+    },
+    {
       link: meta.links.github,
       name: "Github",
+    },
+    {
+      link: meta.links.meta,
+      name: "Meta",
+    },
+  ],
+  socialLinks: [
+    {
+      link: meta.socials.twitter,
+      name: "Twitter",
+    },
+    {
+      link: meta.socials.instagram,
+      name: "Instagram",
+    },
+    {
+      link: meta.socials.telegram,
+      name: "Telegram",
+    },
+    {
+      link: meta.socials.linkedin,
+      name: "LinkedIn",
     },
   ],
 }

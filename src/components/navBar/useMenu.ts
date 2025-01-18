@@ -5,9 +5,9 @@ import disableScroll from "disable-scroll"
 import type styledTheme from "~/src/styles/styledTheme"
 
 interface UseMenuProperties {
-  navRef: React.RefObject<HTMLElement> | null
-  curtainRef: React.RefObject<HTMLDivElement> | null
-  listRef: React.RefObject<HTMLUListElement> | null
+  navRef: React.RefObject<HTMLElement | null> | null
+  curtainRef: React.RefObject<HTMLDivElement | null> | null
+  listRef: React.RefObject<HTMLUListElement | null> | null
   device: (typeof styledTheme)["device"]
 }
 
@@ -33,7 +33,7 @@ const useMenu = ({
   device,
 }: UseMenuProperties) => {
   const [toggle, setToggle] = useState(false)
-  const mql = useRef<MediaQueryList>()
+  const mql = useRef<MediaQueryList>(null)
 
   const handleClick = () =>
     toggle === true ? setToggle(false) : setToggle(true)
@@ -116,16 +116,16 @@ const useMenu = ({
         isNonNullableReference(curtainRef) &&
         isNonNullableReference(listRef)
       ) {
-        curtainRef.current.style.display = "none"
-        listRef.current.style.display = "none"
+        if (curtainRef.current) curtainRef.current.style.display = "none"
+        if (listRef.current) listRef.current.style.display = "none"
       }
       setTimeout(() => {
         if (
           isNonNullableReference(curtainRef) &&
           isNonNullableReference(listRef)
         ) {
-          curtainRef.current.style.display = "block"
-          listRef.current.style.display = "flex"
+          if (curtainRef.current) curtainRef.current.style.display = "block"
+          if (listRef.current) listRef.current.style.display = "flex"
         }
       }, TIMER)
     }

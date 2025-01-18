@@ -16,7 +16,7 @@ const { name, homepage } = packageJSON
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { theme, themeToggler } = useTheme()
   const { title, author } = useSiteMetadata()
-  const copyrightString = `Copyright © ${author}. Built with `
+  const copyrightString = `Copyleft © ${author}. Built with ❤️ on `
 
   return (
     <ThemeProvider theme={styledTheme}>

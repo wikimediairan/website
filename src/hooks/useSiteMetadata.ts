@@ -24,6 +24,10 @@ const useSiteMetadata = () => {
             name
             link
           }
+          # socialLinks {
+          #   name
+          #   link
+          # }
         }
       }
     }

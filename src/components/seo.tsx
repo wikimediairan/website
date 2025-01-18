@@ -23,8 +23,11 @@ interface SEOProperties
 const SEO: React.FC<SEOProperties> = ({ title, desc = "", image }) => {
   const site = useSiteMetadata()
   const description = desc || site.description
-  const ogImageUrl =
+  let ogImageUrl =
     site.siteUrl ?? "" + (image || (defaultOpenGraphImage as string))
+  // override
+  ogImageUrl =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Iranian_Wikimedians_User_Group_Logo_-_Color_-_Horizontal.svg/512px-Iranian_Wikimedians_User_Group_Logo_-_Color_-_Horizontal.svg.png?20240823210538"
 
   return (
     <Helmet
